@@ -33,6 +33,7 @@ end
 
 get '/home' do
 	if logged_in?
+		
 		@user =  current_user
 		@tweets =Tweet.all
 		erb :"static/home"
@@ -51,16 +52,19 @@ post '/logout' do
 	
 end
 
-get '/myprofile' do
-	if logged_in?
-		@user =  current_user
-		@tweets =Tweet.all
-		@mytweets = Tweet.where(user_id: current_user.id).pluck(:subject)
 
-		erb :"static/myprofile"
+post '/profile/:username' do
 
-	else 
+	@tweet_user = User.find_by(username: params[:username])
+	
+	@userprofile = @tweet_user.tweets.pluck(:subject)
+	
+	@tweets = Tweet.all
+	@all_users = User.all
 
-		redirect '/'
-	end
+	erb :"static/profile"
 end
+
+
+
+	

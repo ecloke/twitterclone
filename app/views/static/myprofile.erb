@@ -4,11 +4,21 @@
 
 	<table>
 		  <tr >
-		    <th>My Tweets</th>  
+		    <th>My Tweets</th> 
+		    <th> Edit/delete</th> 
 		  </tr>
 
 			<% @mytweets.each do |tweet| %>
-		  <tr><td><%= tweet %></td></tr>
+		  <tr><td><%= tweet %></td>
+		  <td> 	<form action="/myprofile/edit" method="get">
+					  <input type="submit" value="Edit">
+					</form>
+					<form action="/myprofile" method="post">
+					  <input type="hidden" name="_method" value="DELETE">
+					  <input type="submit" value="Delete">
+					</form>
+		  </td></tr>
+
 		  <%end%>
 		 
 		 </table>

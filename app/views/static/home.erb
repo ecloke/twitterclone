@@ -26,7 +26,8 @@
 	  </tr>
 
 	  <% @tweets.each do |tweet| %>
-	  <tr><td><%= tweet.subject %>  ---  @<%=tweet.user.username%></td></tr>
+	  <tr><td><%= tweet.subject %>  ---by---  <form method=post action="/profile/<%=tweet.user.username%>" >
+	  <input type=submit name= "<%=tweet.user.username%>" value="@<%=tweet.user.username%>"></form>
 	  <%end%>
 	 </table>
 

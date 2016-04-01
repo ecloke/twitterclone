@@ -1,0 +1,13 @@
+<h1> Welcome to @<%=@tweet_user.username%>'s profile</h1>
+
+
+<table>
+  <tr >
+    <th>@<%=@tweet_user.username%>'s Tweets</th>  
+  </tr>
+
+<% @userprofile.each do |tweet| %>
+  <tr><td><%= tweet %></td></tr>
+  <%end%>
+ 
+ </table>
