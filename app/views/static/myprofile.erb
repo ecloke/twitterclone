@@ -1,0 +1,14 @@
+<h1> Welcome to <b>Twitter</b> @<%=current_user.username%></h1>
+
+<div class= "mytweets">
+
+	<table>
+		  <tr >
+		    <th>My Tweets</th>  
+		  </tr>
+
+			<% @mytweets.each do |tweet| %>
+		  <tr><td><%= tweet %></td></tr>
+		  <%end%>
+		 
+		 </table>
