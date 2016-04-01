@@ -1,0 +1,18 @@
+<form method=post action=/logout>
+<input class="logout"type=submit value="Logout">
+</form>
+<form method=post action=/profile>
+<input class="profile"type=submit value="My Profile">
+</form>
+<div class="home_headings">
+
+	<div class="home_headers">
+		<h1> Welcome to <b>Twitter</b> @<%=current_user.username%></h1>
+		<h3> What's happening? </h3>
+
+		<form class="form-wrapper cf" method=post action=/tweet>	
+			<input type="text" placeholder="Whats happening" name="subject">
+			<button type="submit">Tweet</button>
+		</form>
+	</div>
+</div>

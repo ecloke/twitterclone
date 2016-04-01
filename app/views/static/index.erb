@@ -1,2 +1,38 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+
+<div class="headings">
+	<div class="signup">
+		<div class="logo"></div>
+		<h2> Connecting people </h2>
+			<div class="signup_bar">
+				
+				<form method=post action=/signup>
+
+					<input class="username" type=text placeholder="Username" name="user[username]"><br>
+					<input class="email" type=text placeholder="Email" name="user[email]"><br>
+					<input class="password" type=password placeholder="Password" name="user[password]"></br>
+					<input class="signup1" type=submit value="Sign up">
+					<p>
+						<% if @errors %>
+						<ul>
+							<% @errors.each do |error| %>
+								<li><%= error %></li>
+							<% end %>
+						</ul>
+						
+						<% end %>
+					</p>
+
+				</form>
+			</div>
+			 <div class="login_bar">
+			 	
+			 	<form method=post action=/login>
+
+				 	<input class="login_email" type=text placeholder="Email" name="user[email]"><br>
+				 	<input class="login_password"type=password placeholder="Password" name="user[password]"></br>
+				 	<input class="login1"type=submit value="Login">
+				
+			 	</form>
+			 </div>
+	</div>
+</div>
