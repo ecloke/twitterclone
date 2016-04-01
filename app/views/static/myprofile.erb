@@ -10,13 +10,14 @@
 
 			<% @mytweets.each do |tweet| %>
 		  <tr><td><%= tweet %></td>
-		  <td> 	<form action="/myprofile/edit" method="get">
-					  <input type="submit" value="Edit">
-					</form>
-					<form action="/myprofile" method="post">
+		  <td> 	<form method=get action=/edit>
+				<button type=submit >Edit</button>
+				</form>
+				<form action="/tweet/<%=@delete_tweet.id%>" method="post">
 					  <input type="hidden" name="_method" value="DELETE">
 					  <input type="submit" value="Delete">
-					</form>
+	   		    </form>
+				
 		  </td></tr>
 
 		  <%end%>

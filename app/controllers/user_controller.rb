@@ -1,5 +1,5 @@
 
-
+enable :sessions
 get '/' do
   erb :"static/index"
 end
@@ -56,6 +56,9 @@ end
 post '/profile/:username' do
 
 	@tweet_user = User.find_by(username: params[:username])
+	if current_user.username == "{params[:username]}"
+		redirect "/myprofile"
+	else
 	
 	@userprofile = @tweet_user.tweets.pluck(:subject)
 	
@@ -64,7 +67,15 @@ post '/profile/:username' do
 
 	erb :"static/profile"
 end
+end
 
 
 
+delete '/tweet/:id' do
+	 @tweets = Tweet.all
+  @delete_tweet = Tweet.find_by(id: params[:id])
+  Tweet.delete(params[:id])
+  redirect '/myprofile'
+
+end
 	
