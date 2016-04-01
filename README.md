@@ -9,8 +9,11 @@ This is a question repo for testing your web server understanding relate to Ruby
 1. First, fork this repository and `git clone` it to your local machine.
 2. Wireframe and design your database structure.
 3. Start coding!
-4. To submit, `git add .`, `git commit` and `git push` into your own forked repository.
-5. Inform a mentor about your completion.
+4. Commit your code as often as possible into your own forked repository.
+ - git add .
+ - git commit -m "login feature is added"  (for example, commit message according to added feature)
+ - git push origin master.
+5. Once done, inform a mentor about your completion, slack us your github repo address.
 6. Demo your app and walk the mentor through your code to show an understanding of the concepts.
 
 
