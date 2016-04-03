@@ -1,6 +1,7 @@
 <h1>blabal</h1>
 
-  <input type="hidden" name="_method" value="PUT">
+<form method=post action="/tweet/edit/<%=@tweets.id%>">
+  <input type="hidden" name="subject" value="PUT">
   <input type="text">
   <input type="submit" value="Edit Tweet">
 </form>

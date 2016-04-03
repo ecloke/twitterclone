@@ -6,8 +6,8 @@
     <th>@<%=@tweet_user.username%>'s Tweets</th>  
   </tr>
 
-<% @userprofile.each do |tweet| %>
-  <tr><td><%= tweet %></td></tr>
+<% @tweet_user.tweets.each do |tweet| %>
+  <tr><td><%= tweet.subject %></td></tr>
   <%end%>
  
  </table>

@@ -54,19 +54,13 @@ end
 
 
 post '/profile/:username' do
-
+	
 	@tweet_user = User.find_by(username: params[:username])
-	if current_user.username == "{params[:username]}"
-		redirect "/myprofile"
-	else
-	
-	@userprofile = @tweet_user.tweets.pluck(:subject)
-	
 	@tweets = Tweet.all
 	@all_users = User.all
+	
 
 	erb :"static/profile"
-end
 end
 
 
@@ -74,8 +68,11 @@ end
 delete '/tweet/:id' do
 	 @tweets = Tweet.all
   @delete_tweet = Tweet.find_by(id: params[:id])
+
   Tweet.delete(params[:id])
   redirect '/myprofile'
 
 end
+
+
 	

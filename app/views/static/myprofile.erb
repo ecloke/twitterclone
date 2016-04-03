@@ -9,11 +9,13 @@
 		  </tr>
 
 			<% @mytweets.each do |tweet| %>
-		  <tr><td><%= tweet %></td>
-		  <td> 	<form method=get action=/edit>
-				<button type=submit >Edit</button>
+		  <tr><td><%= tweet.subject %></td>
+		  <td> 	<form method=post action="/edit/<%=tweet.id%>">
+		 			 <input type="hidden" name="_method" value="PUT">
+ 			 		 <input type="text" name="edit">
+					 <input type="submit" value="Edit">
 				</form>
-				<form action="/tweet/" method="post">
+				<form action="/tweet/<%=tweet.id%>" method="post">
 					  <input type="hidden" name="_method" value="DELETE">
 					  <input type="submit" value="Delete">
 	   		    </form>
