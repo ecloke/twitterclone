@@ -33,7 +33,7 @@ end
 
 get '/home' do
 	if logged_in?
-		
+		@following = Follower.all
 		@user =  current_user
 		@tweets =Tweet.all
 		erb :"static/home"
@@ -70,7 +70,7 @@ delete '/tweet/:id' do
   @delete_tweet = Tweet.find_by(id: params[:id])
 
   Tweet.delete(params[:id])
-  redirect '/myprofile'
+  redirect '/home'
 
 end
 

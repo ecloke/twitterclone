@@ -27,12 +27,13 @@
 
 	  <% @tweets.each do |tweet| %>
 	  <tr><td><%= tweet.subject %>  ---by---  <form method=post action="/profile/<%=tweet.user.username%>" >
-	  <input type=submit name= "<%=tweet.user.username%>" value="@<%=tweet.user.username%>"></form> <form class="answer" method="post" action="/user/follow">
+	  <input type=submit name= "<%=tweet.user.username%>" value="@<%=tweet.user.username%>"></form> <form class="follow" method="post" action="/follow/<%=tweet.user.id%>">
 		 		  	<input type ="hidden" name="like" value="Follow">
-		 		 	 <button type="submit" >Follow</button>
+		 		 	 <button type="submit" >Follow</button><%=@num_followers%>
 				  </form>
 	  <%end%>
 	  </td></tr>
+
 	  <%=@message%>
 	 </table>
 
