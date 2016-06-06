@@ -1,8 +1,8 @@
 <form method=post action=/logout>
-<input class="logout"type=submit value="Logout">
+	<input class="logout"type=submit value="Logout">
 </form>
 <form method=get action=/myprofile>
-<button type=submit >My Profile</button>
+	<button type=submit >My Profile</button>
 </form>
 
 <div class="home_headings">
@@ -21,21 +21,21 @@
 <div class= "tweets">
 
 	<table>
-	  <tr >
-	    <th>Tweets</th>  
-	  </tr>
+		<tr >
+			<th>Tweets</th>  
+		</tr>
 
-	  <% @tweets.each do |tweet| %>
-	  <tr><td><%= tweet.subject %>  ---by---  <form method=post action="/profile/<%=tweet.user.username%>" >
-	  <input type=submit name= "<%=tweet.user.username%>" value="@<%=tweet.user.username%>"></form> <form class="follow" method="post" action="/follow/<%=tweet.user.id%>">
-		 		  	<input type ="hidden" name="like" value="Follow">
-		 		 	 <button type="submit" >Follow</button><%=@num_followers%>
-				  </form>
-	  <%end%>
-	  </td></tr>
+		<% @tweets.each do |tweet| %>
+		<tr><td><%= tweet.subject %>  ---by---  <form method=post action="/profile/<%=tweet.user.username%>" >
+			<input type=submit name= "<%=tweet.user.username%>" value="@<%=tweet.user.username%>"></form> <form class="follow" method="post" action="/follow/<%=tweet.user.id%>">
+			<input type ="hidden" name="like" value="Follow">
+			<button type="submit" >Follow</button><%=@num_followers%>
+		</form>
+		<%end%>
+	</td></tr>
 
-	  <%=@message%>
-	 </table>
+	<%=@message%>
+</table>
 
-	</div>
+</div>
 

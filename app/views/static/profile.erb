@@ -2,12 +2,12 @@
 
 
 <table>
-  <tr >
-    <th>@<%=@tweet_user.username%>'s Tweets</th>  
-  </tr>
+	<tr >
+		<th>@<%=@tweet_user.username%>'s Tweets</th>  
+	</tr>
 
-<% @tweet_user.tweets.each do |tweet| %>
-  <tr><td><%= tweet.subject %></td></tr>
-  <%end%>
- 
- </table>
+	<% @tweet_user.tweets.each do |tweet| %>
+	<tr><td><%= tweet.subject %></td></tr>
+	<%end%>
+	
+</table>

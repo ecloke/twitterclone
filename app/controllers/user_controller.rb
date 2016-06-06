@@ -1,20 +1,20 @@
 
 enable :sessions
 get '/' do
-  erb :"static/index"
+	erb :"static/index"
 end
 
 post '/signup' do
 # user = User.new(params[:user])
-	@user = User.new(params[:user])
-	if @user.save
-		session[:current_user_id] = @user.id
-		redirect '/home'
-	else
-		@errors = @user.errors.full_messages
-		erb :"static/index"
-	end
-	
+@user = User.new(params[:user])
+if @user.save
+	session[:current_user_id] = @user.id
+	redirect '/home'
+else
+	@errors = @user.errors.full_messages
+	erb :"static/index"
+end
+
 end
 
 post '/login' do
@@ -66,13 +66,12 @@ end
 
 
 delete '/tweet/:id' do
-	 @tweets = Tweet.all
-  @delete_tweet = Tweet.find_by(id: params[:id])
+	@tweets = Tweet.all
+	@delete_tweet = Tweet.find_by(id: params[:id])
 
-  Tweet.delete(params[:id])
-  redirect '/home'
+	Tweet.delete(params[:id])
+	redirect '/home'
 
 end
 
 
-	
